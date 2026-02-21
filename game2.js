@@ -1,73 +1,69 @@
+let userScore = 0;
+let compScore = 0;
 
-let userScore=0;
-let compScore=0;
-let msg=document.querySelector(".msg-container");
-let user=document.querySelector("#user");
-let ai=document.querySelector("#ai");
+const msg = document.querySelector("#msg");
+const user = document.querySelector("#user");
+const ai = document.querySelector("#ai");
+const choices = document.querySelectorAll(".choice");
 
-const choices=document.querySelectorAll(".choice");
-
+// Generate computer choice
 const genCompChoice = () => {
-    const options=["rock", "paper", "scissors"];
-    //rock, paper, scissors
-    const randIdx=Math.floor(Math.random()*3);
-    return options [randIdx];
+    const options = ["rock", "paper", "scissors"];
+    const randIdx = Math.floor(Math.random() * 3);
+    return options[randIdx];
 };
 
+// Capitalize helper
+const cap = (word) => word.charAt(0).toUpperCase() + word.slice(1);
+
+// Show message helper
+const showMsg = (text, color) => {
+    msg.innerText = text;
+    msg.style.backgroundColor = color;
+};
+
+// Draw
 const drawGame = () => {
-    console.log("The game was draw!");
-    msg.innerText=`THE GAME WAS DRAW.`;
-    msg.style.backgroundColor="orange";
+    showMsg("THE GAME WAS DRAW.", "orange");
 };
 
+// Main game logic
 const playGame = (userChoice) => {
-    console.log("User choice=",userChoice)
-    //Generate computer choice
-    const compChoice=genCompChoice();
-    console.log("Computer's choice=",compChoice);
-    
-    if(userChoice===compChoice){
-        //Draw game
+    const compChoice = genCompChoice();
+
+    if (userChoice === compChoice) {
         drawGame();
+        return;
     }
-    else{
-        let userWin=true;
-        if(userChoice==="rock"){
-            //scissors,paper
-            userWin= compChoice === "paper" ? false: true;
-        }
-        if(userChoice==="paper"){
-            //scissors, rock
-            userWin= compChoice === "scissors" ? false : true;
-        }
-        if(userChoice==="scissors"){
-            //rock, paper
-            userWin= compChoice === "rock" ? false : true;
-        }
 
-        if(userWin){
-            msg.innerText=`YOU WON. COMPUTER'S CHOICE WAS ${compChoice}`;
-            userScore+=1;
-            user.innerText=userScore;
-            msg.style.backgroundColor="green";
+    let userWin;
 
-        }   
-        else{
-            msg.innerText=`YOU LOST. COMPUTER'S CHOICE WAS ${compChoice}`;
-            compScore+=1;
-            ai.innerText=userScore;
-            msg.style.backgroundColor="red";
-        }
-    
-    
-    
+    if (userChoice === "rock") {
+        userWin = compChoice !== "paper";
+    } 
+    else if (userChoice === "paper") {
+        userWin = compChoice !== "scissors";
+    } 
+    else {
+        userWin = compChoice !== "rock";
     }
- 
+
+    if (userWin) {
+        userScore++;
+        user.innerText = userScore;
+        showMsg(`YOU WON. COMPUTER CHOSE ${cap(compChoice)}`, "green");
+    } 
+    else {
+        compScore++;
+        ai.innerText = compScore;
+        showMsg(`YOU LOST. COMPUTER CHOSE ${cap(compChoice)}`, "red");
+    }
 };
 
-choices.forEach((choice)=>{
-    choice.addEventListener("click",() => {
-        let userChoice=choice.getAttribute("id");
+// Click listeners
+choices.forEach((choice) => {
+    choice.addEventListener("click", () => {
+        const userChoice = choice.getAttribute("id");
         playGame(userChoice);
-    })
-})
+    });
+});
