@@ -1,6 +1,6 @@
 # Rock Paper Scissors — Day 4 of 30 Days Challenge
 
-🔗 Live Demo: https://saurabh-js-rock-paper-scissor.netlify.app/
+🔗 Live Demo: https://saurabh54e.github.io/Js-Rock-Paper-scissors/
 
 ---
 
