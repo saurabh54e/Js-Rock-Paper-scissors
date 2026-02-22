@@ -69,7 +69,6 @@ Rock-Paper-Scissors/
 ---
 
 ## 👨‍💻 Author
-
 Saurabh Singh
 B.Tech CSE (AI & ML) — Web Development | UI/UX | Robotics
 
