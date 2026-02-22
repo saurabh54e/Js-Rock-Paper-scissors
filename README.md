@@ -1,13 +1,13 @@
 # Rock Paper Scissors — Day 4 of 30 Days Challenge
 
-🔗 Live Demo: https://saurabh54e.github.io/Js-Rock-Paper-scissors/
+🔗 Live Demo: https://saurabh54e.github.io/Js-day04-Rock-Paper-scissors/
 
 ---
 
 ## Overview
 
-This project is part of my **30 Days of Web Development Challenge (Day 4)**.
-I built a classic **Rock Paper Scissors game** using **HTML, CSS, and JavaScript**, focusing on DOM manipulation, game logic, and responsive UI design.
+This project is part of my 30 Days of Web Development Challenge (Day 4).
+I built a classic Rock Paper Scissors game** using **HTML, CSS, and JavaScript, focusing on DOM manipulation, game logic, and responsive UI design.
 
 The game allows users to play against the computer with real-time score updates and visual feedback.
 
@@ -26,10 +26,10 @@ The game allows users to play against the computer with real-time score updates 
 
 ##  Tech Stack
 
-* **HTML5** – Structure
-* **CSS3** – Styling & responsiveness
-* **JavaScript (Vanilla)** – Game logic & DOM manipulation
-* **Netlify** – Deployment
+* HTML5 – Structure
+* CSS3 – Styling & responsiveness
+* JavaScript (Vanilla) – Game logic & DOM manipulation
+* Netlify – Deployment
 
 ---
 
